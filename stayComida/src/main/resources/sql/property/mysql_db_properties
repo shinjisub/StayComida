@@ -1,0 +1,4 @@
+jdbc.driverClassName=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://ec2-13-209-96-85.ap-northeast-2.compute.amazonaws.com:3306/stayComida?useSSL=false&serverTimezone=Asia/Seoul
+jdbc.username=root
+jdbc.password=Tlswltjq001!
