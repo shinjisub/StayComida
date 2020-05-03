@@ -1,0 +1,48 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<!-- ConfigData -->
+<c:set var="contextPath" value="${contextPath}"></c:set>
+<c:set var="projectNm" value="Stay Comida"></c:set>
+<c:set var="jsPath"   value="${contextPath}/resources/js"></c:set>
+<c:set var="cssPath"  value="${contextPath}/resources/css"></c:set>
+<c:set var="imgPath"  value="${contextPath}/resources/img"></c:set>
+<c:set var="menuArr" value="[About Us,About Us1]"></c:set>
+
+<!-- IMG -->
+<%-- <link rel="shortcut icon" href="${contextPath}/resources/Front_Temp/img/ico/favicon.ico"> --%>
+<link rel="Stay Comida icon" type="image/png" href="${contextPath}/resources/img/logo/favicon_staycomidaLogo.ico"/>
+<link rel="apple-touch-icon" sizes="144x144" href="${contextPath}/resources/Front_Temp/img/ico/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="114x114" href="${contextPath}/resources/Front_Temp/img/ico/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="72x72" href="${contextPath}/resources/Front_Temp/img/ico/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" href="${contextPath}/resources/Front_Temp/img/ico/apple-touch-icon-57x57.png">
+
+<!-- CSS -->
+<!-- Bootstrap Core CSS -->
+<link href="${contextPath}/resources/Front_Temp/css/bootstrap.min.css" rel="stylesheet">
+<link href="${contextPath}/resources/Front_Temp/css/animate.css" rel="stylesheet">
+<link href="${contextPath}/resources/Front_Temp/css/plugins.css" rel="stylesheet">
+<!-- Custom CSS -->
+<link href="${contextPath}/resources/Front_Temp/css/style.css" rel="stylesheet">
+<!-- Custom Fonts -->
+<link href="${contextPath}/resources/Front_Temp/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="${contextPath}/resources/Front_Temp/css/pe-icons.css" rel="stylesheet">
+<link href="<c:url value="${cssPath}/common.css"/>" rel="stylesheet">
+
+
+<!-- JavaScripte -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="<c:url value="${jsPath}/common.js" />"></script>
+
+<script type="text/javascript">
+/* $.ajax({
+    url: "/test",
+    type: "GET",
+    data: { stb_id:1 },
+    dataType: "json",
+    success: function (resp) {
+    	console.log(resp);
+    }
+}); */
+</script>

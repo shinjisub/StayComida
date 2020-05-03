@@ -8,12 +8,6 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 
-<!-- 추가로 여러개의 인터셉터 설정 가능 
-	<mvc:interceptor> 
-		<mvc:mapping path="/admin/board_write"/>
-		 <bean class="com.spring.interceptor.AdminInterCeptor"/>
-	  </mvc:interceptor>
- --> 
 	<mvc:interceptors> 
 		<mvc:interceptor>
 			<mvc:mapping path="/**/"/>
