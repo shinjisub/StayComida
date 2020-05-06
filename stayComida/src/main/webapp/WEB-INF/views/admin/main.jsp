@@ -1,24 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="/WEB-INF/views/admin/common/common.jspf" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="kor">
-<head>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<link rel="icon" type="image/png" href="${contextPath}/resources/img/logo/favicon_staycomidaLogo.ico"/>
-	<title>${projectNm}</title>
-	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-</head>
+<%@ include file="/WEB-INF/views/admin/common/common.jspf"%>
 <body data-background-color="dark">
 	<div class="wrapper">
-	
-		<%@ include file="/WEB-INF/views/admin/common/header.jspf" %>
-
+		<%@ include file="/WEB-INF/views/admin/common/header.jspf"%>
 		<div class="main-panel">
 			<div class="content">
 				<div class="page-inner">
 					<div class="mt-2 mb-4">
 						<h2 class="text-white pb-2">Welcome back, Hizrian!</h2>
-						<h5 class="text-white op-7 mb-4">Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.</h5>
+						<h5 class="text-white op-7 mb-4">Yesterday I was clever, so I
+							wanted to change the world. Today I am wise, so I am changing
+							myself.</h5>
 					</div>
 					<div class="row">
 						<div class="col-md-4">
@@ -28,7 +23,10 @@
 									<h2 class="mb-2">17</h2>
 									<p>Users online</p>
 									<div class="pull-in sparkline-fix chart-as-background">
-										<div id="lineChart"><canvas width="327" height="70" style="display: inline-block; width: 327px; height: 70px; vertical-align: top;"></canvas></div>
+										<div id="lineChart">
+											<canvas width="327" height="70"
+												style="display: inline-block; width: 327px; height: 70px; vertical-align: top;"></canvas>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -40,7 +38,10 @@
 									<h2 class="mb-2">27</h2>
 									<p>New Users</p>
 									<div class="pull-in sparkline-fix chart-as-background">
-										<div id="lineChart2"><canvas width="327" height="70" style="display: inline-block; width: 327px; height: 70px; vertical-align: top;"></canvas></div>
+										<div id="lineChart2">
+											<canvas width="327" height="70"
+												style="display: inline-block; width: 327px; height: 70px; vertical-align: top;"></canvas>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -52,7 +53,10 @@
 									<h2 class="mb-2">213</h2>
 									<p>Transactions</p>
 									<div class="pull-in sparkline-fix chart-as-background">
-										<div id="lineChart3"><canvas width="327" height="70" style="display: inline-block; width: 327px; height: 70px; vertical-align: top;"></canvas></div>
+										<div id="lineChart3">
+											<canvas width="327" height="70"
+												style="display: inline-block; width: 327px; height: 70px; vertical-align: top;"></canvas>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -65,17 +69,13 @@
 									<div class="card-head-row">
 										<div class="card-title">User Statistics</div>
 										<div class="card-tools">
-											<a href="#" class="btn btn-info btn-border btn-round btn-sm mr-2">
-												<span class="btn-label">
-													<i class="fa fa-pencil"></i>
-												</span>
-												Export
-											</a>
-											<a href="#" class="btn btn-info btn-border btn-round btn-sm">
-												<span class="btn-label">
-													<i class="fa fa-print"></i>
-												</span>
-												Print
+											<a href="#"
+												class="btn btn-info btn-border btn-round btn-sm mr-2"> <span
+												class="btn-label"> <i class="fa fa-pencil"></i>
+											</span> Export
+											</a> <a href="#" class="btn btn-info btn-border btn-round btn-sm">
+												<span class="btn-label"> <i class="fa fa-print"></i>
+											</span> Print
 											</a>
 										</div>
 									</div>
@@ -118,13 +118,20 @@
 									<div class="card-head-row">
 										<h4 class="card-title">Users Geolocation</h4>
 										<div class="card-tools">
-											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-angle-down"></span></button>
-											<button class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card"><span class="fa fa-sync-alt"></span></button>
-											<button class="btn btn-icon btn-link btn-primary btn-xs"><span class="fa fa-times"></span></button>
+											<button class="btn btn-icon btn-link btn-primary btn-xs">
+												<span class="fa fa-angle-down"></span>
+											</button>
+											<button
+												class="btn btn-icon btn-link btn-primary btn-xs btn-refresh-card">
+												<span class="fa fa-sync-alt"></span>
+											</button>
+											<button class="btn btn-icon btn-link btn-primary btn-xs">
+												<span class="fa fa-times"></span>
+											</button>
 										</div>
 									</div>
-									<p class="card-category">
-									Map of the distribution of users around the world</p>
+									<p class="card-category">Map of the distribution of users
+										around the world</p>
 								</div>
 								<div class="card-body">
 									<div class="row">
@@ -139,12 +146,8 @@
 																</div>
 															</td>
 															<td>Indonesia</td>
-															<td class="text-right">
-																2.320
-															</td>
-															<td class="text-right">
-																42.18%
-															</td>
+															<td class="text-right">2.320</td>
+															<td class="text-right">42.18%</td>
 														</tr>
 														<tr>
 															<td>
@@ -153,12 +156,8 @@
 																</div>
 															</td>
 															<td>USA</td>
-															<td class="text-right">
-																240
-															</td>
-															<td class="text-right">
-																4.36%
-															</td>
+															<td class="text-right">240</td>
+															<td class="text-right">4.36%</td>
 														</tr>
 														<tr>
 															<td>
@@ -167,12 +166,8 @@
 																</div>
 															</td>
 															<td>Australia</td>
-															<td class="text-right">
-																119
-															</td>
-															<td class="text-right">
-																2.16%
-															</td>
+															<td class="text-right">119</td>
+															<td class="text-right">2.16%</td>
 														</tr>
 														<tr>
 															<td>
@@ -181,12 +176,8 @@
 																</div>
 															</td>
 															<td>Russia</td>
-															<td class="text-right">
-																1.081
-															</td>
-															<td class="text-right">
-																19.65%
-															</td>
+															<td class="text-right">1.081</td>
+															<td class="text-right">19.65%</td>
 														</tr>
 														<tr>
 															<td>
@@ -195,12 +186,8 @@
 																</div>
 															</td>
 															<td>China</td>
-															<td class="text-right">
-																1.100
-															</td>
-															<td class="text-right">
-																20%
-															</td>
+															<td class="text-right">1.100</td>
+															<td class="text-right">20%</td>
 														</tr>
 														<tr>
 															<td>
@@ -209,12 +196,8 @@
 																</div>
 															</td>
 															<td>Brasil</td>
-															<td class="text-right">
-																640
-															</td>
-															<td class="text-right">
-																11.63%
-															</td>
+															<td class="text-right">640</td>
+															<td class="text-right">11.63%</td>
 														</tr>
 													</tbody>
 												</table>
@@ -239,7 +222,8 @@
 								<div class="card-body pb-0">
 									<div class="d-flex">
 										<div class="avatar">
-											<img src="${imgPath}/logoproduct.svg" alt="..." class="avatar-img rounded-circle">
+											<img src="${imgPath}/logoproduct.svg" alt="..."
+												class="avatar-img rounded-circle">
 										</div>
 										<div class="flex-1 pt-1 ml-2">
 											<h6 class="fw-bold mb-1">CSS</h6>
@@ -252,7 +236,8 @@
 									<div class="separator-dashed"></div>
 									<div class="d-flex">
 										<div class="avatar">
-											<img src="${imgPath}/logoproduct.svg" alt="..." class="avatar-img rounded-circle">
+											<img src="${imgPath}/logoproduct.svg" alt="..."
+												class="avatar-img rounded-circle">
 										</div>
 										<div class="flex-1 pt-1 ml-2">
 											<h6 class="fw-bold mb-1">J.CO Donuts</h6>
@@ -265,7 +250,8 @@
 									<div class="separator-dashed"></div>
 									<div class="d-flex">
 										<div class="avatar">
-											<img src="${imgPath}/logoproduct3.svg" alt="..." class="avatar-img rounded-circle">
+											<img src="${imgPath}/logoproduct3.svg" alt="..."
+												class="avatar-img rounded-circle">
 										</div>
 										<div class="flex-1 pt-1 ml-2">
 											<h6 class="fw-bold mb-1">Ready Pro</h6>
@@ -289,7 +275,8 @@
 									<div class="card-list">
 										<div class="item-list">
 											<div class="avatar">
-												<img src="${imgPath}/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
+												<img src="${imgPath}/jm_denis.jpg" alt="..."
+													class="avatar-img rounded-circle">
 											</div>
 											<div class="info-user ml-3">
 												<div class="username">Jimmy Denis</div>
@@ -301,7 +288,8 @@
 										</div>
 										<div class="item-list">
 											<div class="avatar">
-												<img src="${imgPath}/chadengle.jpg" alt="..." class="avatar-img rounded-circle">
+												<img src="${imgPath}/chadengle.jpg" alt="..."
+													class="avatar-img rounded-circle">
 											</div>
 											<div class="info-user ml-3">
 												<div class="username">Chad</div>
@@ -313,7 +301,8 @@
 										</div>
 										<div class="item-list">
 											<div class="avatar">
-												<img src="${imgPath}/talha.jpg" alt="..." class="avatar-img rounded-circle">
+												<img src="${imgPath}/talha.jpg" alt="..."
+													class="avatar-img rounded-circle">
 											</div>
 											<div class="info-user ml-3">
 												<div class="username">Talha</div>
@@ -325,7 +314,8 @@
 										</div>
 										<div class="item-list">
 											<div class="avatar">
-												<img src="${imgPath}/mlane.jpg" alt="..." class="avatar-img rounded-circle">
+												<img src="${imgPath}/mlane.jpg" alt="..."
+													class="avatar-img rounded-circle">
 											</div>
 											<div class="info-user ml-3">
 												<div class="username">John Doe</div>
@@ -337,7 +327,8 @@
 										</div>
 										<div class="item-list">
 											<div class="avatar">
-												<img src="${imgPath}/talha.jpg" alt="..." class="avatar-img rounded-circle">
+												<img src="${imgPath}/talha.jpg" alt="..."
+													class="avatar-img rounded-circle">
 											</div>
 											<div class="info-user ml-3">
 												<div class="username">Talha</div>
@@ -349,7 +340,8 @@
 										</div>
 										<div class="item-list">
 											<div class="avatar">
-												<img src="${imgPath}/jm_denis.jpg" alt="..." class="avatar-img rounded-circle">
+												<img src="${imgPath}/jm_denis.jpg" alt="..."
+													class="avatar-img rounded-circle">
 											</div>
 											<div class="info-user ml-3">
 												<div class="username">Jimmy Denis</div>
@@ -366,14 +358,18 @@
 						<div class="col-md-4">
 							<div class="card card-primary bg-primary-gradient">
 								<div class="card-body">
-									<h4 class="mt-3 b-b1 pb-2 mb-4 fw-bold">Active user right now</h4>
+									<h4 class="mt-3 b-b1 pb-2 mb-4 fw-bold">Active user right
+										now</h4>
 									<h1 class="mb-4 fw-bold">17</h1>
-									<h4 class="mt-3 b-b1 pb-2 mb-5 fw-bold">Page view per minutes</h4>
+									<h4 class="mt-3 b-b1 pb-2 mb-5 fw-bold">Page view per
+										minutes</h4>
 									<div id="activeUsersChart"></div>
 									<h4 class="mt-5 pb-3 mb-0 fw-bold">Top active pages</h4>
 									<ul class="list-unstyled">
-										<li class="d-flex justify-content-between pb-1 pt-1"><small>/product/readypro/index.html</small> <span>7</span></li>
-										<li class="d-flex justify-content-between pb-1 pt-1"><small>/product/atlantis/demo.html</small> <span>10</span></li>
+										<li class="d-flex justify-content-between pb-1 pt-1"><small>/product/readypro/index.html</small>
+											<span>7</span></li>
+										<li class="d-flex justify-content-between pb-1 pt-1"><small>/product/atlantis/demo.html</small>
+											<span>10</span></li>
 									</ul>
 								</div>
 							</div>
@@ -387,30 +383,30 @@
 								</div>
 								<div class="card-body">
 									<ol class="activity-feed">
-										<li class="feed-item feed-item-secondary">
-											<time class="date" datetime="9-25">Sep 25</time>
-											<span class="text">Responded to need <a href="#">"Volunteer opportunity"</a></span>
-										</li>
-										<li class="feed-item feed-item-success">
-											<time class="date" datetime="9-24">Sep 24</time>
-											<span class="text">Added an interest <a href="#">"Volunteer Activities"</a></span>
-										</li>
-										<li class="feed-item feed-item-info">
-											<time class="date" datetime="9-23">Sep 23</time>
-											<span class="text">Joined the group <a href="single-group.php">"Boardsmanship Forum"</a></span>
-										</li>
-										<li class="feed-item feed-item-warning">
-											<time class="date" datetime="9-21">Sep 21</time>
-											<span class="text">Responded to need <a href="#">"In-Kind Opportunity"</a></span>
-										</li>
-										<li class="feed-item feed-item-danger">
-											<time class="date" datetime="9-18">Sep 18</time>
-											<span class="text">Created need <a href="#">"Volunteer Opportunity"</a></span>
-										</li>
-										<li class="feed-item">
-											<time class="date" datetime="9-17">Sep 17</time>
-											<span class="text">Attending the event <a href="single-event.php">"Some New Event"</a></span>
-										</li>
+										<li class="feed-item feed-item-secondary"><time
+												class="date" datetime="9-25">Sep 25</time> <span
+											class="text">Responded to need <a href="#">"Volunteer
+													opportunity"</a></span></li>
+										<li class="feed-item feed-item-success"><time
+												class="date" datetime="9-24">Sep 24</time> <span
+											class="text">Added an interest <a href="#">"Volunteer
+													Activities"</a></span></li>
+										<li class="feed-item feed-item-info"><time class="date"
+												datetime="9-23">Sep 23</time> <span class="text">Joined
+												the group <a href="single-group.php">"Boardsmanship
+													Forum"</a>
+										</span></li>
+										<li class="feed-item feed-item-warning"><time
+												class="date" datetime="9-21">Sep 21</time> <span
+											class="text">Responded to need <a href="#">"In-Kind
+													Opportunity"</a></span></li>
+										<li class="feed-item feed-item-danger"><time class="date"
+												datetime="9-18">Sep 18</time> <span class="text">Created
+												need <a href="#">"Volunteer Opportunity"</a>
+										</span></li>
+										<li class="feed-item"><time class="date" datetime="9-17">Sep
+												17</time> <span class="text">Attending the event <a
+												href="single-event.php">"Some New Event"</a></span></li>
 									</ol>
 								</div>
 							</div>
@@ -421,16 +417,18 @@
 									<div class="card-head-row">
 										<div class="card-title">Support Tickets</div>
 										<div class="card-tools">
-											<ul class="nav nav-pills nav-secondary nav-pills-no-bd nav-sm" id="pills-tab" role="tablist">
-												<li class="nav-item">
-													<a class="nav-link" id="pills-today" data-toggle="pill" href="#pills-today" role="tab" aria-selected="true">Today</a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link active" id="pills-week" data-toggle="pill" href="#pills-week" role="tab" aria-selected="false">Week</a>
-												</li>
-												<li class="nav-item">
-													<a class="nav-link" id="pills-month" data-toggle="pill" href="#pills-month" role="tab" aria-selected="false">Month</a>
-												</li>
+											<ul
+												class="nav nav-pills nav-secondary nav-pills-no-bd nav-sm"
+												id="pills-tab" role="tablist">
+												<li class="nav-item"><a class="nav-link"
+													id="pills-today" data-toggle="pill" href="#pills-today"
+													role="tab" aria-selected="true">Today</a></li>
+												<li class="nav-item"><a class="nav-link active"
+													id="pills-week" data-toggle="pill" href="#pills-week"
+													role="tab" aria-selected="false">Week</a></li>
+												<li class="nav-item"><a class="nav-link"
+													id="pills-month" data-toggle="pill" href="#pills-month"
+													role="tab" aria-selected="false">Month</a></li>
 											</ul>
 										</div>
 									</div>
@@ -438,11 +436,15 @@
 								<div class="card-body">
 									<div class="d-flex">
 										<div class="avatar avatar-online">
-											<span class="avatar-title rounded-circle border border-white bg-info">J</span>
+											<span
+												class="avatar-title rounded-circle border border-white bg-info">J</span>
 										</div>
 										<div class="flex-1 ml-3 pt-1">
-											<h6 class="text-uppercase fw-bold mb-1">Joko Subianto <span class="text-warning pl-3">pending</span></h6>
-											<span class="text-muted">I am facing some trouble with my viewport. When i start my</span>
+											<h6 class="text-uppercase fw-bold mb-1">
+												Joko Subianto <span class="text-warning pl-3">pending</span>
+											</h6>
+											<span class="text-muted">I am facing some trouble with
+												my viewport. When i start my</span>
 										</div>
 										<div class="float-right pt-1">
 											<small class="text-muted">8:40 PM</small>
@@ -451,11 +453,15 @@
 									<div class="separator-dashed"></div>
 									<div class="d-flex">
 										<div class="avatar avatar-offline">
-											<span class="avatar-title rounded-circle border border-white bg-secondary">P</span>
+											<span
+												class="avatar-title rounded-circle border border-white bg-secondary">P</span>
 										</div>
 										<div class="flex-1 ml-3 pt-1">
-											<h6 class="text-uppercase fw-bold mb-1">Prabowo Widodo <span class="text-success pl-3">open</span></h6>
-											<span class="text-muted">I have some query regarding the license issue.</span>
+											<h6 class="text-uppercase fw-bold mb-1">
+												Prabowo Widodo <span class="text-success pl-3">open</span>
+											</h6>
+											<span class="text-muted">I have some query regarding
+												the license issue.</span>
 										</div>
 										<div class="float-right pt-1">
 											<small class="text-muted">1 Day Ago</small>
@@ -464,11 +470,15 @@
 									<div class="separator-dashed"></div>
 									<div class="d-flex">
 										<div class="avatar avatar-away">
-											<span class="avatar-title rounded-circle border border-white bg-danger">L</span>
+											<span
+												class="avatar-title rounded-circle border border-white bg-danger">L</span>
 										</div>
 										<div class="flex-1 ml-3 pt-1">
-											<h6 class="text-uppercase fw-bold mb-1">Lee Chong Wei <span class="text-muted pl-3">closed</span></h6>
-											<span class="text-muted">Is there any update plan for RTL version near future?</span>
+											<h6 class="text-uppercase fw-bold mb-1">
+												Lee Chong Wei <span class="text-muted pl-3">closed</span>
+											</h6>
+											<span class="text-muted">Is there any update plan for
+												RTL version near future?</span>
 										</div>
 										<div class="float-right pt-1">
 											<small class="text-muted">2 Days Ago</small>
@@ -477,11 +487,15 @@
 									<div class="separator-dashed"></div>
 									<div class="d-flex">
 										<div class="avatar avatar-offline">
-											<span class="avatar-title rounded-circle border border-white bg-secondary">P</span>
+											<span
+												class="avatar-title rounded-circle border border-white bg-secondary">P</span>
 										</div>
 										<div class="flex-1 ml-3 pt-1">
-											<h6 class="text-uppercase fw-bold mb-1">Peter Parker <span class="text-success pl-3">open</span></h6>
-											<span class="text-muted">I have some query regarding the license issue.</span>
+											<h6 class="text-uppercase fw-bold mb-1">
+												Peter Parker <span class="text-success pl-3">open</span>
+											</h6>
+											<span class="text-muted">I have some query regarding
+												the license issue.</span>
 										</div>
 										<div class="float-right pt-1">
 											<small class="text-muted">2 Day Ago</small>
@@ -490,11 +504,15 @@
 									<div class="separator-dashed"></div>
 									<div class="d-flex">
 										<div class="avatar avatar-away">
-											<span class="avatar-title rounded-circle border border-white bg-danger">L</span>
+											<span
+												class="avatar-title rounded-circle border border-white bg-danger">L</span>
 										</div>
 										<div class="flex-1 ml-3 pt-1">
-											<h6 class="text-uppercase fw-bold mb-1">Logan Paul <span class="text-muted pl-3">closed</span></h6>
-											<span class="text-muted">Is there any update plan for RTL version near future?</span>
+											<h6 class="text-uppercase fw-bold mb-1">
+												Logan Paul <span class="text-muted pl-3">closed</span>
+											</h6>
+											<span class="text-muted">Is there any update plan for
+												RTL version near future?</span>
 										</div>
 										<div class="float-right pt-1">
 											<small class="text-muted">2 Days Ago</small>
@@ -506,105 +524,8 @@
 					</div>
 				</div>
 			</div>
-			<footer class="footer">
-				<div class="container-fluid">
-					<nav class="pull-left">
-						<ul class="nav">
-							<li class="nav-item">
-								<a class="nav-link" href="https://www.themekita.com">
-									ThemeKita
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Help
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">
-									Licenses
-								</a>
-							</li>
-						</ul>
-					</nav>
-					<div class="copyright ml-auto">
-						2018, made with <i class="fa fa-heart heart text-danger"></i> by <a href="https://www.themekita.com">ThemeKita</a>
-					</div>				
-				</div>
-			</footer>
+			<%@ include file="/WEB-INF/views/admin/common/footer.jspf"%>
 		</div>
-		
-		<!-- Custom template | don't include it in your project! -->
-		<div class="custom-template">
-			<div class="title">Settings</div>
-			<div class="custom-content">
-				<div class="switcher">
-					<div class="switch-block">
-						<h4>Logo Header</h4>
-						<div class="btnSwitch">
-							<button type="button" class="changeLogoHeaderColor" data-color="dark"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="blue"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="purple"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="light-blue"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="green"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="orange"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="red"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="white"></button>
-							<br/>
-							<button type="button" class="selected changeLogoHeaderColor" data-color="dark2"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="blue2"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="purple2"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="light-blue2"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="green2"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="orange2"></button>
-							<button type="button" class="changeLogoHeaderColor" data-color="red2"></button>
-						</div>
-					</div>
-					<div class="switch-block">
-						<h4>Navbar Header</h4>
-						<div class="btnSwitch">
-							<button type="button" class="selected changeTopBarColor" data-color="dark"></button>
-							<button type="button" class="changeTopBarColor" data-color="blue"></button>
-							<button type="button" class="changeTopBarColor" data-color="purple"></button>
-							<button type="button" class="changeTopBarColor" data-color="light-blue"></button>
-							<button type="button" class="changeTopBarColor" data-color="green"></button>
-							<button type="button" class="changeTopBarColor" data-color="orange"></button>
-							<button type="button" class="changeTopBarColor" data-color="red"></button>
-							<button type="button" class="changeTopBarColor" data-color="white"></button>
-							<br/>
-							<button type="button" class="changeTopBarColor" data-color="dark2"></button>
-							<button type="button" class="changeTopBarColor" data-color="blue2"></button>
-							<button type="button" class="changeTopBarColor" data-color="purple2"></button>
-							<button type="button" class="changeTopBarColor" data-color="light-blue2"></button>
-							<button type="button" class="changeTopBarColor" data-color="green2"></button>
-							<button type="button" class="changeTopBarColor" data-color="orange2"></button>
-							<button type="button" class="changeTopBarColor" data-color="red2"></button>
-						</div>
-					</div>
-					<div class="switch-block">
-						<h4>Sidebar</h4>
-						<div class="btnSwitch">
-							<button type="button" class="changeSideBarColor" data-color="white"></button>
-							<button type="button" class="changeSideBarColor" data-color="dark"></button>
-							<button type="button" class="selected changeSideBarColor" data-color="dark2"></button>
-						</div>
-					</div>
-					<div class="switch-block">
-						<h4>Background</h4>
-						<div class="btnSwitch">
-							<button type="button" class="changeBackgroundColor" data-color="bg2"></button>
-							<button type="button" class="changeBackgroundColor selected" data-color="bg1"></button>
-							<button type="button" class="changeBackgroundColor" data-color="bg3"></button>
-							<button type="button" class="selected changeBackgroundColor" data-color="dark"></button>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="custom-toggle">
-				<i class="flaticon-settings"></i>
-			</div>
-		</div>
-		<!-- End Custom template -->
-	</div>
+	</div> 
 </body>
 </html>

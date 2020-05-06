@@ -7,7 +7,7 @@
 		<%@ include file="/WEB-INF/views/admin/common/header.jspf"%>
 		<div class="main-panel">
 			<div class="content">
-				
+			
 				<%@ include file="/WEB-INF/views/admin/common/footer.jspf"%>
 			</div>
 		</div>
