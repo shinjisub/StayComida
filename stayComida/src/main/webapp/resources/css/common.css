@@ -1,5 +1,5 @@
 .fontC_W{ color: #ffffff; }
-.searchArea { background: #ffffff; padding: 0px; position: relative; top: -3px; left: 374px; z-index: 10; width: 648px; border: 1px solid rgba(0,0,0,.15); border-radius: .25rem; border-radius: 9px;}
+.searchArea { background: #ffffff; padding: 0px; position: relative; top: -3px; left: 367px; z-index: 10; width: 648px; border: 1px solid rgba(0,0,0,.15); border-radius: .25rem; border-radius: 9px;}
 #keyWordList > li:HOVER {
 	background : #CBCBCB;
 }

@@ -28,4 +28,34 @@
 			OR C.storemenu_menu10 LIKE CONCAT('%',#{keyWord},'%')
 	</select>
 	
+	<select id="getSearchStoreList" resultType="hashmap" parameterType="hashmap">
+		SELECT
+			  B.store_name
+			, B.ssid 
+			, B.scgid
+			, B.store_location
+			, B.store_thumbnail
+		FROM stay_category A JOIN stay_store B
+				ON A.scgid = B.scgid
+			 JOIN stay_storemenu C
+				ON B.ssid = C.ssid
+		WHERE 
+			A.category_name LIKE CONCAT('%',#{keyWord},'%')
+			OR B.store_name LIKE CONCAT('%',#{keyWord},'%')
+			OR B.store_location LIKE CONCAT('%',#{keyWord},'%')
+			OR C.storemenu_menu1 LIKE CONCAT('%',#{keyWord},'%')
+			OR C.storemenu_menu2 LIKE CONCAT('%',#{keyWord},'%')
+			OR C.storemenu_menu3 LIKE CONCAT('%',#{keyWord},'%')
+			OR C.storemenu_menu4 LIKE CONCAT('%',#{keyWord},'%')
+			OR C.storemenu_menu5 LIKE CONCAT('%',#{keyWord},'%')
+			OR C.storemenu_menu6 LIKE CONCAT('%',#{keyWord},'%')
+			OR C.storemenu_menu7 LIKE CONCAT('%',#{keyWord},'%')
+			OR C.storemenu_menu8 LIKE CONCAT('%',#{keyWord},'%')
+			OR C.storemenu_menu9 LIKE CONCAT('%',#{keyWord},'%')
+			OR C.storemenu_menu10 LIKE CONCAT('%',#{keyWord},'%')
+	</select>
+	
+	
+	
+	
 </mapper>

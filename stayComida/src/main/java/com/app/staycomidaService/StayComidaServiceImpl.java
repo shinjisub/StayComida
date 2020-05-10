@@ -12,4 +12,9 @@ public class StayComidaServiceImpl implements StayComidaService{
 	
 	@Autowired
 	private SqlSession sql;
+
+	@Override
+	public List<HashMap<String, Object>> getSearchStoreList(HashMap<String, Object> param){
+		return sql.selectList("getSearchStoreList", param);
+	}
 }

@@ -32,6 +32,7 @@
 						음식종류별 평점...</br>
 		       		</h3>
 						<input type="text" id="search-input" name="search-input" class="text-left heading-font" style=" font-size:21px; width:650px; height: 52px; border-radius: 9px;" placeholder="지역 또는 음식명 찾기...">
+						<a href="javascript::;" id="search-btn" style="color: #ffffff;"><i class="fa fa-search"></i></a>
 						<ul class="list-group searchArea " id="keyWordList"></ul>
 		        </div>
 		    </div>
@@ -441,6 +442,11 @@
           "${contextPath}/resources/Front_Temp/img/bg/bg3.jpg",
         ], {duration: 8000, fade: 500});
 
+        $('#search-btn').on('click', function(){
+        	let searchKeyWord = $('input[name=search-input]').val();
+        	location.href = "${contextPath}search?keyWord="+searchKeyWord;
+        });
+
 		$('input[name=search-input]').keyup(function(e){
 			if($.trim(this.value) == '' || this.value =='/')
 				return false;
@@ -458,7 +464,7 @@
 
 		    			if(e.data.length > 0){
 			    			$.each(e.data, function(idx, ele){
-					    		html += '<a href="#'+ele.ssid+'"><li class="list-group-item text-left heading-font">'+ele.store_name+'</li></a>';
+					    		html += '<a href="${contextPath}search?keyWord='+ele.store_name+'"><li class="list-group-item text-left heading-font">'+ele.store_name+'</li></a>';
 					    	});
 			    			$('#keyWordList').css({overflow : 'scroll', height: tagHeight});
 		    			}else {

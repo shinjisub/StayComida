@@ -34,4 +34,12 @@ public class MainController {
 		ModelAndView mv = new ModelAndView("jsonView");
 		return mv;
 	}
+	
+	@RequestMapping(value="/search")
+	public ModelAndView searchView(@RequestParam HashMap<String, Object> param){
+		ModelAndView mvc = new ModelAndView("fr/searchList");
+		System.out.println(stayComidaServiceImpl.getSearchStoreList(param));
+		mvc.addObject("storeList", stayComidaServiceImpl.getSearchStoreList(param));
+		return mvc;
+	}
 }
