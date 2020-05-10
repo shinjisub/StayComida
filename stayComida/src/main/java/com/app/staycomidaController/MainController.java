@@ -32,14 +32,6 @@ public class MainController {
 	@RequestMapping(value="/getMainKeyWordList.ajax")
 	public ModelAndView getMainKeyWordList(@RequestParam HashMap<String, Object> param){
 		ModelAndView mv = new ModelAndView("jsonView");
-		try {
-			mv.addObject("keyWordList", stayComidaServiceImpl.getMainKeyWordList(param));
-			mv.addObject("resultCode", 100);
-		} catch (Exception e) {
-			mv.addObject("resultCode", 200);
-			e.printStackTrace();
-		}
-
 		return mv;
 	}
 }

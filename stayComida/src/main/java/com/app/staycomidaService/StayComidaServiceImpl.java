@@ -12,10 +12,4 @@ public class StayComidaServiceImpl implements StayComidaService{
 	
 	@Autowired
 	private SqlSession sql;
-
-	@Override
-	public List<HashMap<String, Object>> getMainKeyWordList(HashMap<String, Object> param) {
-		List<HashMap<String, Object>> m = sql.selectList("getMainKeyWordList", param);
-		return m;
-	}
 }
