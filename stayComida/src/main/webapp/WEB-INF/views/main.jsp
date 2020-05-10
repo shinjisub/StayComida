@@ -446,6 +446,10 @@
         	let searchKeyWord = $('input[name=search-input]').val();
         	location.href = "${contextPath}search?keyWord="+searchKeyWord;
         });
+        
+        $('input[name=search-input]').keypress(function(e){
+        	$('#search-btn').click();
+        });
 
 		$('input[name=search-input]').keyup(function(e){
 			if($.trim(this.value) == '' || this.value =='/')
