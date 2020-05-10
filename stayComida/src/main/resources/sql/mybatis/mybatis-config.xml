@@ -5,5 +5,7 @@
 <configuration>
 	<mappers>
 		<mapper resource="sql/main/main.xml"></mapper>
+		<mapper resource="sql/admin/category.xml"></mapper>
+		<mapper resource="sql/admin/store.xml"></mapper>
 	</mappers>
 </configuration>

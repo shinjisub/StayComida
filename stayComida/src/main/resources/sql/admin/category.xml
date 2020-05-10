@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.staycomida.admin.service.category.CategoryService">
+
+	<!-- 고정 SQL -->
+	<sql id="select">
+		<if test="select != null and select.size > 0">
+			<foreach collection="select" item="value" separator=",">
+				value
+	        </foreach>
+		</if>
+		<if test="select = null or select.size == 0">
+			*
+		</if>
+	</sql>
+	
+	<sql id="iswhere">
+		<if test="iswhere">
+			WHERE
+		</if>
+	</sql>
+	
+	<sql id="where">
+		<if test="where != null and where.size > 0">
+			<foreach collection="where" item="item" open="(" close=")" separator="AND">
+	            ${item.key} = #{item.value}
+	        </foreach>
+		</if>
+	</sql>
+	
+	<sql id="like">
+		<if test="like != null and like.size > 0">
+			<foreach collection="like" item="item" open="(" close=")" separator="AND">
+				${item.key} LIKE CONCAT('%', #{item.value}, '%')
+	        </foreach>
+		</if>
+	</sql>
+
+	<sql id="orderby">
+		<if test="orderby != null and orderby.size > 0">
+			ORDER BY
+			<foreach collection="orderby" item="item" separator=",">
+	            ${item.key} ${item.value}
+	        </foreach>
+		</if>
+	</sql>
+	
+	<sql id="limit">
+		<if test="limit != null and limit.offset != null and limit.limit != null">
+			LIMIT #{limit.offset}, #{limit.limit}
+		</if>
+	</sql>
+	<!-- 고정 SQL -->
+
+	<select id="categoryGetList" resultType="com.app.staycomida.admin.object.Category" parameterType="hashmap">
+		SELECT 
+		<include refid="select"/>
+		FROM stay_category
+		<include refid="iswhere"/>
+		<include refid="where"/>
+		<include refid="like"/>
+		<include refid="orderby"/>
+		<include refid="limit"/>
+	</select>
+	
+	<select id="categoryGetInfo" resultType="com.app.staycomida.admin.object.Category" parameterType="hashmap">
+		SELECT
+		<include refid="select"/>
+		FROM stay_category
+		<include refid="iswhere"/>
+		<include refid="where"/>
+		<include refid="like"/>
+		<include refid="orderby"/>
+		LIMIT 0, 1		
+	</select>
+
+</mapper>

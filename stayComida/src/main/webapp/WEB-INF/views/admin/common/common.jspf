@@ -34,6 +34,7 @@
 	<script src="${jsPath}/atlantis.min.js"></script>
 	<script src="${jsPath}/setting-demo.js"></script>
 	<script src="${jsPath}/demo.js"></script>
+	<script src="${jsPath}/common.js"></script>
 	
 	<!-- CSS -->
 	<link rel="stylesheet" href="${cssPath}/bootstrap.min.css">
