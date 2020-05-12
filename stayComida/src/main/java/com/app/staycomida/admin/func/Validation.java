@@ -8,6 +8,8 @@ public class Validation extends AdminCommonCode {
    
    private List<HashMap<String, String>> validations;
    
+   private AdminCommonCode commonCode = new AdminCommonCode();
+   
    public Validation() {
       this.validations = new ArrayList<HashMap<String, String>>();
    }
@@ -33,12 +35,22 @@ public class Validation extends AdminCommonCode {
       validations.add(validation);
    }
    
-   public List<String> check(HashMap<String, Object> data) {
-      List<String> result = new ArrayList<String>();
+   public HashMap<String, Object> check(HashMap<String, Object> data) {
+	  List<HashMap<String, String>> valiResult = new ArrayList<HashMap<String, String>>();
+      HashMap<String, String> valiFail = new HashMap<String, String>();
       for (HashMap<String, String> validation : validations) {
           if (data.get(validation.get("name")) == null || data.get(validation.get("name")).equals("")) {
-             result.add(validation.get("message"));
+        	  valiFail.clear();
+        	  valiFail.put("name", validation.get("name"));
+        	  valiFail.put("message", validation.get("message"));
+        	  valiResult.add(valiFail);
           }
+      }
+      
+      HashMap<String, Object> result = new HashMap<String, Object>();
+      result.put("valiResult", valiResult);
+      if (valiResult.size() > 0) {
+    	  result.put("resultCode", this.commonCode.getValidationCode());
       }
       return result;
    }
