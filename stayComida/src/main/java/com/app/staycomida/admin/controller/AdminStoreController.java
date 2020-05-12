@@ -44,7 +44,7 @@ public class AdminStoreController {
 	
 	@ResponseBody
 	@RequestMapping(value = "/admin/store/write/submit", method = RequestMethod.POST)
-	public void sharingWriteSubmit(@RequestParam HashMap<String, Object> postData) throws IOException {
+	public void StoreWriteSubmit(@RequestParam HashMap<String, Object> postData) throws IOException {
 		SqlParams sqlParams = new SqlParams();
 		sqlParams.setData(postData);
 		Integer result = storeService.update(sqlParams);
