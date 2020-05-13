@@ -6,12 +6,10 @@ import java.util.List;
 
 public class Validation extends AdminCommonCode {
    
-   private List<HashMap<String, String>> validations;
+   private List<HashMap<String, String>> validations = new ArrayList<HashMap<String, String>>();
    
-   private AdminCommonCode commonCode = new AdminCommonCode();
-   
-   public Validation() {
-      this.validations = new ArrayList<HashMap<String, String>>();
+   public List<HashMap<String, String>> getValidations () {
+	   return this.validations;
    }
    
    public void setRules(String inputName, String name, String inputType) {
@@ -34,25 +32,5 @@ public class Validation extends AdminCommonCode {
       validation.put("message", message);
       validations.add(validation);
    }
-   
-   public HashMap<String, Object> check(HashMap<String, Object> data) {
-	  List<HashMap<String, String>> valiResult = new ArrayList<HashMap<String, String>>();
-      HashMap<String, String> valiFail = new HashMap<String, String>();
-      for (HashMap<String, String> validation : validations) {
-          if (data.get(validation.get("name")) == null || data.get(validation.get("name")).equals("")) {
-        	  valiFail.clear();
-        	  valiFail.put("name", validation.get("name"));
-        	  valiFail.put("message", validation.get("message"));
-        	  valiResult.add(valiFail);
-          }
-      }
-      
-      HashMap<String, Object> result = new HashMap<String, Object>();
-      result.put("valiResult", valiResult);
-      if (valiResult.size() > 0) {
-    	  result.put("resultCode", this.commonCode.getValidationCode());
-      }
-      return result;
-   }
-   
+
 }

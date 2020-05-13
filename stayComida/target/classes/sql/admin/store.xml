@@ -57,7 +57,8 @@
 	<select id="storeGetList" resultType="com.app.staycomida.admin.object.Store" parameterType="hashmap">
 		SELECT 
 		<include refid="select"/>
-		FROM stay_store
+		FROM stay_store A
+		INNER JOIN stay_category B ON A.scgid = B.scgid
 		<include refid="iswhere"/>
 		<include refid="where"/>
 		<include refid="like"/>
@@ -68,7 +69,8 @@
 	<select id="storeGetInfo" resultType="com.app.staycomida.admin.object.Store" parameterType="hashmap">
 		SELECT
 		<include refid="select"/>
-		FROM stay_store
+		FROM stay_store A
+		INNER JOIN stay_category B ON A.scgid = B.scgid
 		<include refid="iswhere"/>
 		<include refid="where"/>
 		<include refid="like"/>
@@ -76,7 +78,7 @@
 		LIMIT 0, 1		
 	</select>
 	
-	<insert id="storeUpdate" parameterType="hashmap" useGeneratedKeys="true" keyProperty="idx">
+	<insert id="storeUpdate" parameterType="hashmap" useGeneratedKeys="true" keyProperty="id">
 		<if test="iswhere">
 			UPDATE stay_store
 		</if>
@@ -89,7 +91,7 @@
         </foreach>
         <include refid="iswhere"/>
 		<include refid="where"/>
-		<include refid="like"/>
+		<include refid="like"/>	
 	</insert>
 
 </mapper>

@@ -9,10 +9,10 @@
 			<div class="content">
 				<div class="page-inner">
 					<div class="page-header">
-						<h4 class="page-title">Forms</h4>
+						<h4 class="page-title">매장 등록</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
-								<a href="#">
+								<a href="/admin">
 									<i class="flaticon-home"></i>
 								</a>
 							</li>
@@ -20,13 +20,13 @@
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="#">Forms</a>
+								<a href="/admin/store/list">매장 관리</a>
 							</li>
 							<li class="separator">
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="#">Basic Form</a>
+								<a href="/admin/store/write">매장 등록</a>
 							</li>
 						</ul>
 					</div>
@@ -58,10 +58,10 @@
 													<div class="row">
 														<div class="col-lg-6 mb10">
 															<div class="input-group">
-																<input type="text" class="form-control" id="store_zipcode" name="store_zipcode" placeholder="우편번호">
 																<div class="input-group-append">
-																	<button type="button" class="btn btn-primary">주소검색</button>
+																	<button type="button" class="btn btn-primary" onclick="addressSearch('store_zipcode', 'store_address1', 'store_address2')">주소검색</button>
 																</div>
+																<input type="text" class="form-control" id="store_zipcode" name="store_zipcode" placeholder="우편번호">
 															</div>
 														</div>
 														<div class="col-lg-12 mb10">
@@ -77,7 +77,7 @@
 									</div>
 									<div class="card-action text-right">
 										<button class="btn btn-success" type="button" button-type="submit" form-id="storeForm" submit-url="/admin/store/write/submit">등록</button>
-										<button class="btn btn-danger" type="button">취소</button>
+										<button class="btn btn-danger" type="button" onclick="history.back();">취소</button>
 									</div>
 								</div>
 							</form>

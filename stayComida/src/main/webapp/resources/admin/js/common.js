@@ -94,6 +94,16 @@ function datepickers() {
 	});
 }
 
+function addressSearch(id1, id2, id3) {
+	new daum.Postcode({
+        oncomplete: function(data) {
+        	$("#"+id1).val(data.zonecode);
+        	$("#"+id2).val(data.address);
+        	$("#"+id3).focus();
+        }
+    }).open();
+}
+
 function buttonType() {
 	var attr = 'button-type';
 	$(document).on('click', '['+attr+']', function(){
@@ -127,7 +137,24 @@ function buttonType() {
 				    dataType: "json",
 				    async: false,
 				    success: function (resp) {
-				    	console.log('resp', resp);
+				    	$('.vali-fail-message').remove();
+				    	$('.vali-fail').removeClass('vali-fail');
+				    	if (parseInt(resp.resultCode, 10) === 200) {
+				    		alert("매장이 정상적으로 등록되었습니다.");
+				    		if (resp.redirect) {
+				    			location.href = resp.redirect;
+				    		} else {
+				    			location.href = '/admin/store/list';
+				    		}
+				    	} else if (parseInt(resp.resultCode, 10) === 100) {
+				    		resp.validationFailList.map(item => {
+				    			const input = $('[name="' + item.name + '"]');
+				    			if (input.length > 0 && !input.hasClass("vali-fail")) {
+				    				input.addClass("vali-fail");
+				    				input.after('<small class="form-text text-muted vali-fail-message w100p dp-block">' + item.message + '</small>');
+				    			}
+				    		});
+				    	}
 				    }
 				});
 				break;
