@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navlist>
+	<nav>
+		<title>Dashboard</title>
+		<url>/admin</url>
+		<icon>fa-home</icon>
+	</nav>
+	<nav>
+		<title>매장 관리</title>
+		<url>/admin/store</url>
+		<icon>fa-map-marker-alt</icon>
+		<subnav>
+			<title>매장 목록</title>
+			<url>/admin/store/list</url>
+		</subnav>
+		<subnav>
+			<title>매장 등록</title>
+			<url>/admin/store/write</url>
+		</subnav>
+	</nav>
+</navlist>

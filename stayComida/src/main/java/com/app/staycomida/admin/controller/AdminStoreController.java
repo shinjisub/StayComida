@@ -3,7 +3,10 @@ package com.app.staycomida.admin.controller;
 import java.io.IOException;
 import java.util.HashMap;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.app.staycomida.admin.func.AdminNavigation;
+import com.app.staycomida.admin.func.AdminPagination;
 import com.app.staycomida.admin.func.AjaxResult;
 import com.app.staycomida.admin.func.SqlParams;
 import com.app.staycomida.admin.func.Validation;
@@ -26,13 +31,17 @@ public class AdminStoreController {
 	private StoreService storeService;
 	
 	@RequestMapping(value="/admin/store/list")
-	public ModelAndView StoreList() throws IOException {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("admin/store/list");
+	public ModelAndView StoreList(HttpServletRequest request, @RequestParam(required = false) Integer page) throws IOException {
+		ModelAndView mv = new ModelAndView("admin/store/list");
 		try {
+			
 			SqlParams sqlParams = new SqlParams();
 			sqlParams.setOrderby("ssid", "DESC");
 			mv.addObject("storeList", storeService.getList(sqlParams));
+		
+			AdminPagination adminPagination = new AdminPagination(request, page, 100);
+			mv.addObject("paging", adminPagination.getPaging());
+		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -41,8 +50,7 @@ public class AdminStoreController {
 	
 	@RequestMapping(value="/admin/store/write")
 	public ModelAndView StoreWrite() throws IOException {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("admin/store/write");
+		ModelAndView mv = new ModelAndView("admin/store/write");
 		try {
 			mv.addObject("categoryList", categoryService.getList(new SqlParams()));
 		} catch (Exception e) {

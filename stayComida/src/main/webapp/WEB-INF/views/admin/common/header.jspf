@@ -234,48 +234,37 @@
 			</ul>
 		</div>
 	</nav>
-	<!-- End Navbar -->
 </div>
 <div class="sidebar sidebar-style-2" data-background-color="dark2">
 	<div class="sidebar-wrapper scrollbar scrollbar-inner">
 		<div class="sidebar-content">
 			<div class="user">
 				<div class="info">
-					<a data-toggle="collapse" href="#collapseExample"
-						aria-expanded="true"> <span> Admin <span
-							class="user-level">Administrator</span> <span class="caret"></span>
-					</span>
-					</a>
+					<a data-toggle="collapse" href="#collapseExample" aria-expanded="true"><span> Admin <span class="user-level">Administrator</span> <span class="caret"></span></span></a>
 					<div class="clearfix"></div>
-
 					<div class="collapse in" id="collapseExample">
 						<ul class="nav">
-							<li><a href="#profile"> <span class="link-collapse">내
-										정보 수정</span>
-							</a></li>
-							<li><a href="#profile"> <span class="link-collapse">로그아웃</span>
-							</a></li>
+							<li><a href=""> <span class="link-collapse">내 정보 수정</span></a></li>
+							<li><a href=""> <span class="link-collapse">로그아웃</span></a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<ul class="nav nav-primary">
-				<li class="nav-item active"><a class="collapsed"
-					href="${adminUrl}"> <i class="fas fa-home"></i>
-						<p>Dashboard</p>
-				</a></li>
-				<li class="nav-item"><a data-toggle="collapse" href="#maps">
-						<i class="fas fa-map-marker-alt"></i>
-						<p>매장 관리</p> <span class="caret"></span>
-				</a>
+				<li class="nav-item active">
+					<a class="collapsed" href="${adminUrl}"> <i class="fas fa-home"></i><p>Dashboard</p></a>
+				</li>
+				<li class="nav-item">
+					<a data-toggle="collapse" href="${adminUrl}/store/list"><i class="fas fa-map-marker-alt"></i><p>매장 관리</p> <span class="caret"></span></a>
 					<div class="collapse" id="maps">
 						<ul class="nav nav-collapse">
-							<li><a href="${adminUrl}/store/list"> <span
-									class="sub-item">매장 목록</span></a> <a href="${adminUrl}/store/write">
-									<span class="sub-item">매장 등록</span>
-							</a></li>
+							<li>
+								<a href="${adminUrl}/store/list"><span class="sub-item">매장 목록</span></a> 
+								<a href="${adminUrl}/store/write"><span class="sub-item">매장 등록</span></a>
+							</li>
 						</ul>
-					</div></li>
+					</div>
+				</li>
 			</ul>
 		</div>
 	</div>

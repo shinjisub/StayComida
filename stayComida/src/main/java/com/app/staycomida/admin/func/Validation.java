@@ -8,10 +8,6 @@ public class Validation extends AdminCommonCode {
    
    private List<HashMap<String, String>> validations = new ArrayList<HashMap<String, String>>();
    
-   public List<HashMap<String, String>> getValidations () {
-	   return this.validations;
-   }
-   
    public void setRules(String inputName, String name, String inputType) {
       String message = "";
       switch (inputType) {
@@ -32,5 +28,13 @@ public class Validation extends AdminCommonCode {
       validation.put("message", message);
       validations.add(validation);
    }
-
+   
+   public void clear() {
+	   this.validations.clear();
+   }
+   
+   public List<HashMap<String, String>> getValidations () {
+	   return this.validations;
+   }
+   
 }
