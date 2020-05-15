@@ -111,6 +111,14 @@
 		
 	<!-- library -->
 	
+		<!-- Configuration -->
+		<dependency>
+		    <groupId>commons-configuration</groupId>
+		    <artifactId>commons-configuration</artifactId>
+		    <version>1.6</version>
+		</dependency>
+			
+	
 		<!-- Mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -153,6 +161,13 @@
 			<version>1.9.2</version>
 		</dependency>
 		
+		<!-- JDOM  -->
+		<dependency>
+		    <groupId>org.jdom</groupId>
+		    <artifactId>jdom2</artifactId>
+		    <version>2.0.6</version>
+		</dependency>
+				
 		<!--FileUpload  -->
 		<dependency>
 		    <groupId>commons-fileupload</groupId>

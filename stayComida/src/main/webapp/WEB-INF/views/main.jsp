@@ -31,7 +31,7 @@
 		        		솔직한 리뷰...</br>
 						음식종류별 평점...</br>
 		       		</h3>
-						<input type="text" id="search-input" name="search-input" class="text-left heading-font" style=" font-size:21px; width:650px; height: 52px; border-radius: 9px;" placeholder="지역 또는 음식명 찾기...">
+						<input type="text" id="search-input" name="search-input" class="text-left heading-font" style=" font-size:21px; width:650px; height: 52px; border-radius: 9px;" placeholder="가게명 또는 음식명 찾기...">
 						<a href="javascript::;" id="search-btn" style="color: #ffffff;"><i class="fa fa-search"></i></a>
 						<ul class="list-group searchArea " id="keyWordList"></ul>
 		        </div>
@@ -408,10 +408,10 @@
             </div>
     	</section>
 
-        <section>
+        <!-- <section>
             <div id="mapwrapper"></div>  
         </section>
-
+ -->
 		<!-- FOOTER -->
 		<%@ include file="/WEB-INF/views/common/fr/footer.jspf" %>
 		<!-- /FOOTER -->
@@ -448,7 +448,7 @@
         });
         
         $('input[name=search-input]').keypress(function(e){
-        	$('#search-btn').click();
+        	(e.keyCode ==13)? $('#search-btn').click() : '';
         });
 
 		$('input[name=search-input]').keyup(function(e){
@@ -461,7 +461,7 @@
 			};
 	    	util.commonRetrieve({
 	    		data : param,
-	    		callBackFunc : function(e){console.log(e);
+	    		callBackFunc : function(e){
 	    			if(e.resultCode == 200){
 		    			let html = '';
 		    			let tagHeight = (e.data.length > 0)? 'auto' : 'auto';
@@ -478,10 +478,8 @@
 
 		    			$('#keyWordList').html(html);
 	    			} else{
-	    				Swal.fire({
-    					  icon: 'error',
-    					  title: '데이터 오류',
-    					});
+	    				common.errorMsgAlert();
+	    				console.error('errorMsg', e.errorMsg);
 	    			}
 	    		}
 

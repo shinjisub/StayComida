@@ -16,9 +16,10 @@ const common = {
     	Swal.fire(msg);
     },
     errorMsgAlert : function(errorMsg){
+    	let message = errorMsg? errorMsg : '데이터 오류';
     	Swal.fire({
 		  icon: 'error',
-		  title: errorMsg,
+		  title: message,
 		});
     },
 };

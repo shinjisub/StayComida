@@ -1,4 +1,4 @@
-package com.app.staycomidacommon;
+package com.app.staycomida.common;
 
 import java.util.HashMap;
 import java.util.List;
@@ -38,7 +38,7 @@ public class Common {
 			mv.addObject("data", result);
 			mv.addObject("resultCode", 200);
 		} catch (Exception e) {
-			mv.addObject("data", e.getMessage());
+			mv.addObject("errorMsg", e.getMessage());
 			mv.addObject("resultCode", 100);
 		}
 

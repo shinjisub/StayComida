@@ -34,7 +34,7 @@
 			, B.ssid 
 			, B.scgid
 			, B.store_location
-			, B.store_thumbnail
+			, B.store_thumbnail_path
 		FROM stay_category A JOIN stay_store B
 				ON A.scgid = B.scgid
 			 JOIN stay_storemenu C
@@ -54,8 +54,6 @@
 			OR C.storemenu_menu9 LIKE CONCAT('%',#{keyWord},'%')
 			OR C.storemenu_menu10 LIKE CONCAT('%',#{keyWord},'%')
 	</select>
-	
-	
 	
 	
 </mapper>

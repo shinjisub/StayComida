@@ -16,7 +16,6 @@
 
     <section id="the-menu">
         <div class="section-inner">
-        
         	<div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center mb100">

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<front>
+		<serverInfo>
+			<name>front</name>
+			<age>front1234</age>
+		</serverInfo>
+	
+		<superCategory>시발람아</superCategory>
+	</front>
+</config>
