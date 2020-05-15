@@ -1,6 +1,7 @@
 package com.app.staycomida.controller;
 
 import java.util.HashMap;
+import java.util.List;
 
 import javax.annotation.Resource;
 
@@ -10,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.app.staycomida.common.ConfigurationUtil;
 import com.app.staycomida.common.UploadUtil;
+import com.app.staycomida.configurations.ConfigurationUtil;
 import com.app.staycomidaService.StayComidaServiceImpl;
 
 @Controller
@@ -31,6 +32,7 @@ public class MainController {
 	 */
 	@RequestMapping(value="/")
 	public String Mains(){
+		System.out.println(configurationUtil.getXmlString("front.superCategory"));
 		return "main";
 	}
 	

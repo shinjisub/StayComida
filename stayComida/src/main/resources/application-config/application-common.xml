@@ -10,9 +10,8 @@
 		
 	<!-- config Util -->
 	<bean id="uploadUtil" class="com.app.staycomida.common.UploadUtil"/>
-	<bean id="configurationUtil" class="com.app.staycomida.common.ConfigurationUtil">
+	<bean id="configurationUtil" class="com.app.staycomida.configurations.ConfigurationUtil">
 		<property name="locations" value="classpath:application-config/configuration/*.xml"></property>
-		<!-- <property name="locations" value="/src/main/WEB-INF/spring/configuration/test.xml"></property> -->
 	</bean>
 
 	<!-- JsonView -->

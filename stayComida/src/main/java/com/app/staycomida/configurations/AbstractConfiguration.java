@@ -1,6 +1,7 @@
-package com.app.staycomida.common;
+package com.app.staycomida.configurations;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.commons.configuration.CompositeConfiguration;
 import org.apache.commons.configuration.Configuration;
@@ -47,6 +48,11 @@ public class AbstractConfiguration {
 		hashMap.put(xmlParam, this.compositeConfiguration.getString(xmlParam));
 
 		return hashMap;
+	}
+	
+	public List getList(String xmlParam){
+		loadAbstractConfiguration();
+		return this.compositeConfiguration.getList(xmlParam);
 	}
 	
 }
