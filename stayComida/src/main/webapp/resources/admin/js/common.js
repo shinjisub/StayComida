@@ -162,10 +162,45 @@ function buttonType() {
 	});
 }
 
+function adminLimitSelect() {
+	$(document).on('change', '.admin-limit-select', function(){
+		$(this).closest("form").submit();
+	});
+}
+
+function adminSearchWord() {
+	$(document).on('keyup', '.admin-search-word', function(key){
+        if (key.keyCode == 13) {
+        	$(this).closest("form").submit();
+        }
+	});
+}
+
+function orderbyTh() {
+	$(document).on('click', '[orderby-th]', function(){
+		const key = $(this).attr('orderby-th');
+		if (!key) { return false; }
+		
+		let value = "";
+		if ($(this).hasClass("sorting")) {
+			value = key + "-desc";
+		} else if ($(this).hasClass("sorting_asc")) {
+			value = key + "-asc";
+		} else if ($(this).hasClass("sorting_desc")) {
+			value = "";
+		}
+		
+		$(this).closest('form').find('input[type="hidden"][name="orderby"]').val(value);
+		$(this).closest('form').submit();
+	});
+}
 
 $(document).ready(function(){
 	selectDefaultValue();
 	inputValidation();
 //	datepickers();
 	buttonType();
+	adminLimitSelect();
+	adminSearchWord();
+	orderbyTh();
 });

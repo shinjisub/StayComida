@@ -1,6 +1,7 @@
 package com.app.staycomida.admin.object;
 
 public class Store {
+	private Integer num; 
 	private Integer ssid;
 	private Integer smid;
 	private Integer scgid;
@@ -108,6 +109,14 @@ public class Store {
 	
 	public void setStore_modified(String store_modified) {
 		this.store_modified = store_modified;
+	}
+
+	public Integer getNum() {
+		return num;
+	}
+
+	public void setNum(Integer num) {
+		this.num = num;
 	}
 	
 }

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="kor">
-<%@ include file="/WEB-INF/views/admin/common/common.jspf" %>
+<%@ include file="/WEB-INF/views/admin/common/common.jspf"%>
 <body data-background-color="dark">
 	<div class="wrapper">
 		<%@ include file="/WEB-INF/views/admin/common/header.jspf"%>
@@ -40,63 +40,76 @@
 								<div class="card-body">
 									<div class="table-responsive">
 										<div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
-											<div class="row">
-												<div class="col-sm-12 col-md-6">
-													<div class="dataTables_length" id="basic-datatables_length">
-													<label>
-														Show 
-														<select name="basic-datatables_length" aria-controls="basic-datatables" class="form-control form-control-sm">
-															<option value="10">10</option>
-															<option value="25">25</option>
-															<option value="50">50</option>
-															<option value="100">100</option>
-														</select> 
-														entries
-													</label>
+											<form id="storeListForm" method="get">
+												<input type="hidden" name="page" value="${page}"/>
+												<input type="hidden" name="orderby"/>
+												<div class="row">
+													<div class="col-sm-12 col-md-6">
+														${limitSelect}
+													</div>
+													<div class="col-sm-12 col-md-6">
+														<div id="basic-datatables_filter" class="dataTables_filter">
+															<label>Search:<input type="text" name="searchword" class="form-control form-control-sm admin-search-word" placeholder="" aria-controls="basic-datatables" value="${searchword}"></label>
+														</div>
+													</div>
 												</div>
-											</div>
-											<div class="col-sm-12 col-md-6">
-												<div id="basic-datatables_filter" class="dataTables_filter">
-													<label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="basic-datatables"></label>
-												</div>
-											</div>
-											</div>
 												<div class="row">
 													<div class="col-sm-12">
 														<table id="basic-datatables" class="display table table-striped table-hover dataTable" role="grid" aria-describedby="basic-datatables_info">
 															<thead>
 																<tr role="row">
-																	<th class="sorting_asc">No.</th>
-																	<th class="sorting">매장명</th>
-																	<th class="sorting">매장 카테고리</th>
-																	<th class="sorting">위치</th>
-																	<th class="sorting">주소</th>
-																	<th class="sorting">등록날짜</th>
+																	<th>No.</th>
+																	<th class="
+																		<c:if test="${!orderby == null and orderby[0] == 'store_name'}">sorting_${orderby[1]}</c:if>
+																		<c:if test="${orderby == null or !orderby[0] == 'store_name'}">sorting</c:if>
+																	" orderby-th="store_name">매장명</th>
+																	<th class="
+																		<c:if test="${!orderby == null and orderby[0] == 'category_name'}">sorting_${orderby[1]}</c:if>
+																		<c:if test="${orderby == null or !orderby[0] == 'category_name'}">sorting</c:if>
+																	" orderby-th="category_name">매장 카테고리</th>
+																	<th class="
+																		<c:if test="${!orderby == null and orderby[0] == 'store_location'}">sorting_${orderby[1]}</c:if>
+																		<c:if test="${orderby == null or !orderby[0] == 'store_location'}">sorting</c:if>
+																	" orderby-th="store_location">위치</th>
+																	<th class="
+																		<c:if test="${!orderby == null and orderby[0] == 'store_zipcode'}">sorting_${orderby[1]}  </c:if>
+																		<c:if test="${orderby == null or !orderby[0] == 'store_zipcode'}">sorting</c:if>
+																	" orderby-th="store_zipcode">주소</th>
+																	<th class="
+																		<c:if test="${!orderby == null and orderby[0] == 'ssid'}">sorting_${orderby[1]}</c:if>
+																		<c:if test="${orderby == null or !orderby[0] == 'ssid'}">sorting</c:if>
+																	" orderby-th="ssid">등록날짜</th>
+																	<th>관리</th>
 																</tr>
 															</thead>
 															<tbody>
-																<c:forEach var="item" items="${storeList}">
+																<c:forEach var="item" items="${storeList.list}">
 																	<tr role="row" class="odd">
-																		<td class="sorting_1">1</td>
+																		<td>${item.num}</td>
 																		<td>${item.store_name}</td>
 																		<td>${item.category_name}</td>
 																		<td>${item.store_location}</td>
 																		<td>${item.store_zipcode} ${item.store_address1} ${item.store_address2}</td>
 																		<td>${item.store_created}</td>
+																		<td>
+																			<button type="button" class="btn btn-sm btn-warning">수정</button>
+																			<button type="button" class="btn btn-sm btn-danger">삭제</button>
+																		</td>
 																	</tr>
 																</c:forEach>
 															</tbody>
 														</table>
 													</div>
 												</div>
-											<div class="row">
-												<div class="col-sm-12 col-md-5">
-													<div class="dataTables_info" id="basic-datatables_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
+												<div class="row">
+													<div class="col-sm-12 col-md-5">
+														<div class="dataTables_info" id="basic-datatables_info" role="status" aria-live="polite">총 ${storeList.count}개</div>
+													</div>
+													<div class="col-sm-12 col-md-7">
+														${paging}
+													</div>
 												</div>
-												<div class="col-sm-12 col-md-7">
-													${paging}
-												</div>
-											</div>
+											</form>
 										</div>
 									</div>
 								</div>

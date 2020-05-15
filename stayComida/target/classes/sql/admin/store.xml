@@ -8,11 +8,25 @@
 	<sql id="select">
 		<if test="select != null and select.size > 0">
 			<foreach collection="select" item="value" separator=",">
-				value
+				${value }
 	        </foreach>
 		</if>
 		<if test="select = null or select.size == 0">
 			*
+		</if>
+	</sql>
+	
+	<sql id="isjoin">
+		<if test="join != null and join.size > 0">
+			A
+		</if>
+	</sql>
+	
+	<sql id="join">
+		<if test="join != null and join.size > 0">
+			<foreach collection="join" item="item">
+	            ${item.type} JOIN ${item.table} ON ${item.on}
+	        </foreach>
 		</if>
 	</sql>
 	
@@ -57,8 +71,9 @@
 	<select id="storeGetList" resultType="com.app.staycomida.admin.object.Store" parameterType="hashmap">
 		SELECT 
 		<include refid="select"/>
-		FROM stay_store A
-		INNER JOIN stay_category B ON A.scgid = B.scgid
+		FROM stay_store 
+		<include refid="isjoin"/>
+		<include refid="join"/>
 		<include refid="iswhere"/>
 		<include refid="where"/>
 		<include refid="like"/>
@@ -69,13 +84,26 @@
 	<select id="storeGetInfo" resultType="com.app.staycomida.admin.object.Store" parameterType="hashmap">
 		SELECT
 		<include refid="select"/>
-		FROM stay_store A
-		INNER JOIN stay_category B ON A.scgid = B.scgid
+		FROM stay_store
+		<include refid="isjoin"/>
+		<include refid="join"/>
 		<include refid="iswhere"/>
 		<include refid="where"/>
 		<include refid="like"/>
 		<include refid="orderby"/>
 		LIMIT 0, 1		
+	</select>
+	
+	<select id="storeGetCount" resultType="int" parameterType="hashmap">
+		SELECT
+			COUNT(*) as totalCount
+		FROM stay_store
+		<include refid="isjoin"/>
+		<include refid="join"/>
+		<include refid="iswhere"/>
+		<include refid="where"/>
+		<include refid="like"/>
+		<include refid="orderby"/>
 	</select>
 	
 	<insert id="storeUpdate" parameterType="hashmap" useGeneratedKeys="true" keyProperty="id">
