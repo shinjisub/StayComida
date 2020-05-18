@@ -36,11 +36,11 @@ function selectDefaultValue() {
 
 function inputValidation() {
 	$(document).on('keyup', '[validation]', function(){
-	    var validation = $(this).attr('validation');
+	    const validation = $(this).attr('validation');
 	    if (validation) {
-	        var self = $(this);
-	        var value = $.trim(self.val());
-	        var validationArr = validation.split('|');
+	    	const self = $(this);
+	    	const value = $.trim(self.val());
+	    	const validationArr = validation.split('|');
 	        validationArr.map(vali => {
 	            switch (vali) {
 	                case 'onlyNum':
@@ -105,26 +105,27 @@ function addressSearch(id1, id2, id3) {
 }
 
 function buttonType() {
-	var attr = 'button-type';
+	const attr = 'button-type';
 	$(document).on('click', '['+attr+']', function(){
-		var self = $(this);
-		var attrValue = self.attr(attr);
+		const self = $(this);
+		const attrValue = self.attr(attr);
 		switch (attrValue) {
 			case 'submit':
-				var formId = self.attr('form-id');
-				var submitUrl = self.attr('submit-url');
-				var submitType = self.attr('submit-type') ? self.attr('submit-type') : 'POST';
+				const formId = self.attr('form-id');
+				const submitUrl = self.attr('submit-url');
+				const submitType = self.attr('submit-type') ? self.attr('submit-type') : 'POST';
 				if (!formId || !submitUrl) {
 					console.error('submit 버튼의 필수 속성이 모두 설정되지 않았습니다.[form-id, submit-url]');
 					return false;
 				}
-				var form = $('#'+formId);
+				const form = $('#'+formId);
+				const redirect = form.attr('redirect-url') ? form.attr('redirect-url') : false;
 				if (form.length == 0) {
 					console.error('submit 버튼의 form-id 속성이 잘못 설정되었습니다.[form-id]');
 					return false;
 				}
-				var data = form.serializeArray();
-				var submitData = {};
+				const data = form.serializeArray();
+				let submitData = {};
 				if (data.length > 0) {
 					data.map(item => {
 						submitData[item.name] = item.value;
@@ -139,12 +140,18 @@ function buttonType() {
 				    success: function (resp) {
 				    	$('.vali-fail-message').remove();
 				    	$('.vali-fail').removeClass('vali-fail');
-				    	if (parseInt(resp.resultCode, 10) === 200) {
-				    		alert("매장이 정상적으로 등록되었습니다.");
-				    		if (resp.redirect) {
+				    	
+				    	if (resp.resultData.alert) {
+			    			alert(resp.resultData.alert);
+			    		}
+				    	
+				    	if (parseInt(resp.resultCode, 10) === 200) {	
+				    		if (resp.resultData.redirect) {
 				    			location.href = resp.redirect;
+				    		} else if (redirect) {
+				    			location.href = redirect;
 				    		} else {
-				    			location.href = '/admin/store/list';
+				    			history.back();
 				    		}
 				    	} else if (parseInt(resp.resultCode, 10) === 100) {
 				    		resp.validationFailList.map(item => {
@@ -154,6 +161,59 @@ function buttonType() {
 				    				input.after('<small class="form-text text-muted vali-fail-message w100p dp-block">' + item.message + '</small>');
 				    			}
 				    		});
+				    	}
+				    }
+				});
+				break;
+			case 'go':
+				const goUrl = self.attr('go-url');
+				if (!goUrl) {
+					console.error('go 버튼의 필수 속성이 모두 설정되지 않았습니다.[go-url]');
+					return false;
+				}
+				location.href = goUrl;
+				break;
+			case 'back':
+				history.back();
+				break;
+			case 'ajax':
+				const ajaxType = self.attr('ajax-type') ? self.attr('ajax-type') : 'POST';
+				const ajaxUrl = self.attr('ajax-url');
+				const ajaxData = self.attr('ajax-data');
+				if (!ajaxUrl) {
+					console.error('ajax 버튼의 필수 속성이 모두 설정되지 않았습니다.[ajax-url]');
+					return false;
+				}
+				
+				let ajaxDataObj = {};
+				if (ajaxData) {
+					const ajaxDataArr = ajaxData.split('&');
+					ajaxDataArr.map(item => {
+						const itemArr = item.split('=');
+						ajaxDataObj[itemArr[0]] = itemArr[1];
+					});
+				}
+				$.ajax({
+				    url: ajaxUrl,
+				    type: ajaxType,
+				    data: ajaxDataObj,
+				    dataType: "json",
+				    async: false,
+				    success: function (resp) {
+				    	if (resp.resultData.alert) {
+			    			alert(resp.resultData.alert);
+			    		}
+				    	if (parseInt(resp.resultCode, 10) === 200) {
+				    		const redirect = self.attr('redirect-url') ? self.attr('redirect-url') : false;
+					    	if (resp.resultData.redirect) {
+				    			location.href = resp.redirect;
+				    		} else if (redirect) {
+				    			location.href = redirect;
+				    		} else {
+				    			location.reload();
+				    		}
+				    	} else {
+				    		console.error("ajax errorCode:"+resp.resultCode);
 				    	}
 				    }
 				});
@@ -176,25 +236,6 @@ function adminSearchWord() {
 	});
 }
 
-function orderbyTh() {
-	$(document).on('click', '[orderby-th]', function(){
-		const key = $(this).attr('orderby-th');
-		if (!key) { return false; }
-		
-		let value = "";
-		if ($(this).hasClass("sorting")) {
-			value = key + "-desc";
-		} else if ($(this).hasClass("sorting_asc")) {
-			value = key + "-asc";
-		} else if ($(this).hasClass("sorting_desc")) {
-			value = "";
-		}
-		
-		$(this).closest('form').find('input[type="hidden"][name="orderby"]').val(value);
-		$(this).closest('form').submit();
-	});
-}
-
 $(document).ready(function(){
 	selectDefaultValue();
 	inputValidation();
@@ -202,5 +243,4 @@ $(document).ready(function(){
 	buttonType();
 	adminLimitSelect();
 	adminSearchWord();
-	orderbyTh();
 });

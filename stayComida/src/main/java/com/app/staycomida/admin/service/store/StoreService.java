@@ -12,4 +12,5 @@ public interface StoreService {
 	public Store getInfo(SqlParams sqlParams);
 	public int getCount(SqlParams sqlParams);
 	public Integer update(SqlParams sqlParams);
+	public Integer delete(SqlParams sqlParams);
 }

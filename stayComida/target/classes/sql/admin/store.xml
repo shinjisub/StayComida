@@ -121,5 +121,12 @@
 		<include refid="where"/>
 		<include refid="like"/>	
 	</insert>
+	
+	<delete id="storeDelete" parameterType="hashmap">
+		DELETE FROM stay_store
+		<include refid="iswhere"/>
+		<include refid="where"/>
+		<include refid="like"/>	
+	</delete>
 
 </mapper>

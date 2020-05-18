@@ -51,6 +51,10 @@ public class SqlParams {
 		return this;
 	}
 	
+	public List<HashMap<String, String>> getWhere() {
+		return this.where;
+	}
+	
 	public SqlParams setLike(String key, String value) {
 		if (value != null && !value.equals("")) {
 			HashMap<String, String> param = new HashMap<String, String>();
@@ -60,6 +64,10 @@ public class SqlParams {
 			this.iswhere = true;
 		}
 		return this;
+	}
+	
+	public List<HashMap<String, String>> getLike() {
+		return this.like;
 	}
 	
 	public SqlParams setOrderby(String key, String value) {

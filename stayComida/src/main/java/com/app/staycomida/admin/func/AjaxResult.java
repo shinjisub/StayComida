@@ -68,5 +68,18 @@ public class AjaxResult extends AdminCommonCode {
 		result.put("resultData", data);
 		return result;
 	}
+	
+	public HashMap<String, Object> necessaryNull() {
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		result.put("resultCode", this.necessaryNullCode);
+		return result;
+	}
+	
+	public HashMap<String, Object> necessaryNull(HashMap<String, Object> data) {
+		HashMap<String, Object> result = new HashMap<String, Object>();
+		result.put("resultCode", this.necessaryNullCode);
+		result.put("resultData", data);
+		return result;
+	}
 
 }

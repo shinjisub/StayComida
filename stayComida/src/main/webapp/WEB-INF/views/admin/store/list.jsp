@@ -12,7 +12,7 @@
 						<h4 class="page-title">매장 목록</h4>
 						<ul class="breadcrumbs">
 							<li class="nav-home">
-								<a href="/admin">
+								<a href="${adminUrl}">
 									<i class="flaticon-home"></i>
 								</a>
 							</li>
@@ -20,13 +20,13 @@
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="/admin/store/list">매장 관리</a>
+								<a href="${adminUrl}/store/list">매장 관리</a>
 							</li>
 							<li class="separator">
 								<i class="flaticon-right-arrow"></i>
 							</li>
 							<li class="nav-item">
-								<a href="/admin/store/list">매장 목록</a>
+								<a href="${adminUrl}/store/list">매장 목록</a>
 							</li>
 						</ul>
 					</div>
@@ -59,26 +59,11 @@
 															<thead>
 																<tr role="row">
 																	<th>No.</th>
-																	<th class="
-																		<c:if test="${!orderby == null and orderby[0] == 'store_name'}">sorting_${orderby[1]}</c:if>
-																		<c:if test="${orderby == null or !orderby[0] == 'store_name'}">sorting</c:if>
-																	" orderby-th="store_name">매장명</th>
-																	<th class="
-																		<c:if test="${!orderby == null and orderby[0] == 'category_name'}">sorting_${orderby[1]}</c:if>
-																		<c:if test="${orderby == null or !orderby[0] == 'category_name'}">sorting</c:if>
-																	" orderby-th="category_name">매장 카테고리</th>
-																	<th class="
-																		<c:if test="${!orderby == null and orderby[0] == 'store_location'}">sorting_${orderby[1]}</c:if>
-																		<c:if test="${orderby == null or !orderby[0] == 'store_location'}">sorting</c:if>
-																	" orderby-th="store_location">위치</th>
-																	<th class="
-																		<c:if test="${!orderby == null and orderby[0] == 'store_zipcode'}">sorting_${orderby[1]}  </c:if>
-																		<c:if test="${orderby == null or !orderby[0] == 'store_zipcode'}">sorting</c:if>
-																	" orderby-th="store_zipcode">주소</th>
-																	<th class="
-																		<c:if test="${!orderby == null and orderby[0] == 'ssid'}">sorting_${orderby[1]}</c:if>
-																		<c:if test="${orderby == null or !orderby[0] == 'ssid'}">sorting</c:if>
-																	" orderby-th="ssid">등록날짜</th>
+																	<th>매장명</th>
+																	<th>매장 카테고리</th>
+																	<th>위치</th>
+																	<th>주소</th>
+																	<th>등록날짜</th>
 																	<th>관리</th>
 																</tr>
 															</thead>
@@ -92,8 +77,8 @@
 																		<td>${item.store_zipcode} ${item.store_address1} ${item.store_address2}</td>
 																		<td>${item.store_created}</td>
 																		<td>
-																			<button type="button" class="btn btn-sm btn-warning">수정</button>
-																			<button type="button" class="btn btn-sm btn-danger">삭제</button>
+																			<button type="button" class="btn btn-sm btn-warning" button-type="go" go-url="${adminUrl}/store/write?ssid=${item.ssid}&redirect=${redirect}">수정</button>
+																			<button type="button" class="btn btn-sm btn-danger" button-type="ajax" ajax-type="post" ajax-url="${adminUrl}/store/delete" ajax-data="ssid=${item.ssid}&test=test">삭제</button>
 																		</td>
 																	</tr>
 																</c:forEach>

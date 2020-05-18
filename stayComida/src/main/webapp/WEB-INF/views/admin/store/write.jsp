@@ -32,7 +32,8 @@
 					</div>
 					<div class="row">
 						<div class="col-lg-12">
-							<form id="storeForm">
+							<form id="storeForm" redirect-url="${redirect}">
+								<input type="hidden" name="ssid" value="${storeInfo.ssid}"/>
 								<div class="card">
 									<div class="card-header">
 										<div class="card-title">매장 정보 입력</div>
@@ -45,13 +46,13 @@
 													<select class="form-control" id="scgid" name="scgid">
 														<option value="">- 선택 -</option>
 														<c:forEach var="item" items="${categoryList}">
-															<option value="${item.scgid}">${item.category_name}</option>
+															<option value="${item.scgid}" <c:if test="${item.scgid == storeInfo.scgid}">selected</c:if>>${item.category_name}</option>
 														</c:forEach>
 													</select>
 												</div>
 												<div class="form-group">
 													<label for="store_name">매장명</label>
-													<input type="text" class="form-control" id="store_name" name="store_name" placeholder="매장명을 입력해주세요.">
+													<input type="text" class="form-control" id="store_name" name="store_name" placeholder="매장명을 입력해주세요." value="${storeInfo.store_name}">
 												</div>
 												<div class="form-group">
 													<label for="store_name">주소</label>
@@ -61,14 +62,14 @@
 																<div class="input-group-append">
 																	<button type="button" class="btn btn-primary" onclick="addressSearch('store_zipcode', 'store_address1', 'store_address2')">주소검색</button>
 																</div>
-																<input type="text" class="form-control" id="store_zipcode" name="store_zipcode" placeholder="우편번호">
+																<input type="text" class="form-control" id="store_zipcode" name="store_zipcode" placeholder="우편번호"  value="${storeInfo.store_zipcode}">
 															</div>
 														</div>
 														<div class="col-lg-12 mb10">
-															<input type="text" class="form-control" id="store_address1" name="store_address1" placeholder="기본주소">
+															<input type="text" class="form-control" id="store_address1" name="store_address1" placeholder="기본주소"  value="${storeInfo.store_address1}">
 														</div>
 														<div class="col-lg-12">
-															<input type="text" class="form-control" id="store_address2" name="store_address2" placeholder="상세주소">
+															<input type="text" class="form-control" id="store_address2" name="store_address2" placeholder="상세주소"  value="${storeInfo.store_address2}">
 														</div>
 													</div>
 												</div>

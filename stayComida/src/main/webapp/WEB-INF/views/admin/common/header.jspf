@@ -255,8 +255,8 @@
 					<a class="collapsed" href="${adminUrl}"> <i class="fas fa-home"></i><p>Dashboard</p></a>
 				</li>
 				<li class="nav-item">
-					<a data-toggle="collapse" href="${adminUrl}/store/list"><i class="fas fa-map-marker-alt"></i><p>매장 관리</p> <span class="caret"></span></a>
-					<div class="collapse" id="maps">
+					<a data-toggle="collapse" data-target="#store" href="${adminUrl}/store/list"><i class="fas fa-map-marker-alt"></i><p>매장 관리</p> <span class="caret"></span></a>
+					<div class="collapse" id="store">
 						<ul class="nav nav-collapse">
 							<li>
 								<a href="${adminUrl}/store/list"><span class="sub-item">매장 목록</span></a> 

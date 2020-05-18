@@ -62,4 +62,13 @@ public class StoreServiceImpl implements StoreService {
 		return sql.insert(prefix + "Update", params);
 	}
 
+	@Override
+	public Integer delete(SqlParams sqlParams) {
+		if (sqlParams.getWhere().size() == 0 && sqlParams.getLike().size() == 0) {
+			return 0;
+		}
+		HashMap<String, Object> params = sqlParams.getParams();
+		return sql.delete(prefix + "Delete", params);
+	}
+
 }
