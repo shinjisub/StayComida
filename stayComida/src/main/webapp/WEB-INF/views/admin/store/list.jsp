@@ -42,7 +42,6 @@
 										<div id="basic-datatables_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
 											<form id="storeListForm" method="get">
 												<input type="hidden" name="page" value="${page}"/>
-												<input type="hidden" name="orderby"/>
 												<div class="row">
 													<div class="col-sm-12 col-md-6">
 														${limitSelect}

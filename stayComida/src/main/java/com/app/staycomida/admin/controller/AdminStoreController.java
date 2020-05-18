@@ -120,7 +120,6 @@ public class AdminStoreController {
 			resultData.put("alert", "매장  "+updateType+"에 실패하였습니다.");
 			return ajaxResult.fail(resultData);
 		}
-		
 	}
 	
 	@ResponseBody
