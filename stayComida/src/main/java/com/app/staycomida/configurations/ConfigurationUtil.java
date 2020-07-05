@@ -1,7 +1,12 @@
 package com.app.staycomida.configurations;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.xml.sax.SAXException;
 
 public class ConfigurationUtil extends AbstractConfiguration{
 
@@ -27,11 +32,11 @@ public class ConfigurationUtil extends AbstractConfiguration{
 	 * EX) getXmlList("front.superCategory");
 	 * @param xmlParam
 	 * @return List
+	 * @throws IOException 
+	 * @throws SAXException 
+	 * @throws ParserConfigurationException 
 	 */
-	/*
-	 * ※ Don't use 사용금지
 	public List getXmlList(String xmlParam){
 		return getList(xmlParam);
 	}
-	*/
 }

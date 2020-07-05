@@ -5,11 +5,44 @@
 			<name>front</name>
 			<age>front1234</age>
 		</serverInfo>
-	
-		<superCategory>시발람아</superCategory>
-		<list>
-			<id>1</id>
-			<name>StayComida</name>
-		</list>
+		
+		<navList>
+			<superCategory>
+				<title>About US</title>
+				<url>/admin/store</url>
+				<icon>fa-map-marker-alt</icon>
+
+				<category>
+					<title>매장 관리</title>
+					<url>/admin/store</url>
+					<icon>fa-map-marker-alt</icon>
+				</category>
+			</superCategory>
+
+			<superCategory>
+				<title>스페셜 목록</title>
+				<url>/admin/store</url>
+				<icon>fa-map-marker-alt</icon>
+
+				<category>
+					<title>매장 관리</title>
+					<url>/admin/store</url>
+					<icon>fa-map-marker-alt</icon>
+				</category>
+			</superCategory>
+
+			<superCategory>
+				<title>다른 메뉴</title>
+				<url>/admin/store</url>
+				<icon>fa-map-marker-alt</icon>
+
+				<category>
+					<title>매장 관리</title>
+					<url>/admin/store</url>
+					<icon>fa-map-marker-alt</icon>
+				</category>
+			</superCategory>
+		</navList>
+
 	</front>
 </config>

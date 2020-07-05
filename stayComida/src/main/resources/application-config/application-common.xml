@@ -9,6 +9,7 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
 		
 	<!-- config Util -->
+	<bean id="commonUtil" class="com.app.staycomida.common.CommonUtil"/>
 	<bean id="uploadUtil" class="com.app.staycomida.common.UploadUtil"/>
 	<bean id="configurationUtil" class="com.app.staycomida.configurations.ConfigurationUtil">
 		<property name="locations" value="classpath:application-config/configuration/*.xml"></property>

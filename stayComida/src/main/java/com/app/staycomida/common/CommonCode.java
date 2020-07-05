@@ -1,6 +1,11 @@
 package com.app.staycomida.common;
 
+/**
+ * abstract CommonCode
+ * @author User
+ *
+ */
 public abstract class CommonCode {
-	public String fileDownPath = "C:\\stayComidaUpload";
-	public String [][] extensionArr = {{".jpg", ".png"}, {".doc",".excel", ".ppt", ".txt"}};
+	protected String fileDownPath = "C:\\stayComidaUpload";
+	protected String [][] extensionArr = {{".jpg", ".png"}, {".doc",".excel", ".ppt", ".txt"}};
 }
